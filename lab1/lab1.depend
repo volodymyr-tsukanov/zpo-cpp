@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1727867820 source:/home/student/Pobrane/lab/lab1/main.cpp
+	<iostream>
+	"Person.h"
+	"Teacher.h"
+	"Student.h"
+
+1727865094 source:/home/student/Pobrane/lab/lab1/src/Teacher.cpp
+	<iostream>
+	"Teacher.h"
+
+1727865420 /home/student/Pobrane/lab/lab1/include/Teacher.h
+	"Person.h"
+
+1727865823 /home/student/Pobrane/lab/lab1/include/Person.h
+	<iostream>
+
+1727865474 source:/home/student/Pobrane/lab/lab1/src/Person.cpp
+	<iostream>
+	"Person.h"
+
+1727866778 source:/home/student/Pobrane/lab/lab1/src/Student.cpp
+	<iostream>
+	"Student.h"
+
+1727866660 /home/student/Pobrane/lab/lab1/include/Student.h
+	"Person.h"
+
