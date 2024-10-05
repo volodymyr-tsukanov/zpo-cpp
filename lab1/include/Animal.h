@@ -1,5 +1,8 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
+#include <iostream>
+
+using namespace std;
 
 
 class Animal
@@ -25,7 +28,7 @@ public:
 };
 
 
-• metodę giveVoice()– wyświetla na konsolę ciąg znaków „Chrum, miau, hau, piiiii”;
-• metodę info() – wyświetla dane składowe na konsole.
+/*• metodę giveVoice()– wyświetla na konsolę ciąg znaków „Chrum, miau, hau, piiiii”;
+• metodę info() – wyświetla dane składowe na konsole.*/
 
 #endif // ANIMAL_H

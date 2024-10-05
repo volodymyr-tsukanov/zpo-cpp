@@ -26,3 +26,30 @@
 1727866660 /home/student/Pobrane/lab/lab1/include/Student.h
 	"Person.h"
 
+1727867820 source:/home/vladimr/Desktop/git/zpo-cpp/lab1/main.cpp
+	<iostream>
+	"Person.h"
+	"Teacher.h"
+	"Student.h"
+
+1727935712 /home/vladimr/Desktop/git/zpo-cpp/lab1/include/Person.h
+	<iostream>
+
+1727865420 /home/vladimr/Desktop/git/zpo-cpp/lab1/include/Teacher.h
+	"Person.h"
+
+1727866660 /home/vladimr/Desktop/git/zpo-cpp/lab1/include/Student.h
+	"Person.h"
+
+1727865474 source:/home/vladimr/Desktop/git/zpo-cpp/lab1/src/Person.cpp
+	<iostream>
+	"Person.h"
+
+1727866778 source:/home/vladimr/Desktop/git/zpo-cpp/lab1/src/Student.cpp
+	<iostream>
+	"Student.h"
+
+1727865094 source:/home/vladimr/Desktop/git/zpo-cpp/lab1/src/Teacher.cpp
+	<iostream>
+	"Teacher.h"
+
