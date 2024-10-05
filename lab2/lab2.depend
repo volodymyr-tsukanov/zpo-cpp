@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1728130499 source:/home/vladimr/Desktop/git/zpo-cpp/lab2/main.cpp
+	<iostream>
+	<string>
+	"Figure.h"
+	"Square.h"
+	"Circle.h"
+	"Employee.h"
+	"Developer.h"
+	"TeamLeader.h"
+
+1728121246 source:/home/vladimr/Desktop/git/zpo-cpp/lab2/src/Figure.cpp
+	<iostream>
+	"Figure.h"
+
+1728121174 /home/vladimr/Desktop/git/zpo-cpp/lab2/include/Figure.h
+
+1728122936 source:/home/vladimr/Desktop/git/zpo-cpp/lab2/src/Square.cpp
+	<iostream>
+	"Figure.h"
+	"Square.h"
+
+1728121300 /home/vladimr/Desktop/git/zpo-cpp/lab2/include/Square.h
+	"Figure.h"
+
+1728122730 source:/home/vladimr/Desktop/git/zpo-cpp/lab2/src/Circle.cpp
+	<iostream>
+	"Figure.h"
+	"Circle.h"
+
+1728122626 /home/vladimr/Desktop/git/zpo-cpp/lab2/include/Circle.h
+	"Figure.h"
+
+1728127606 source:/home/vladimr/Desktop/git/zpo-cpp/lab2/src/Employee.cpp
+	"Employee.h"
+
+1728128310 /home/vladimr/Desktop/git/zpo-cpp/lab2/include/Employee.h
+	<iostream>
+
+1728125862 source:/home/vladimr/Desktop/git/zpo-cpp/lab2/src/Developer.cpp
+	"Developer.h"
+
+1728128702 /home/vladimr/Desktop/git/zpo-cpp/lab2/include/Developer.h
+	"Employee.h"
+
+1728125901 source:/home/vladimr/Desktop/git/zpo-cpp/lab2/src/TeamLeader.cpp
+	"TeamLeader.h"
+
+1728128702 /home/vladimr/Desktop/git/zpo-cpp/lab2/include/TeamLeader.h
+	"Employee.h"
+
