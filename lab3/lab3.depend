@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1728146513 source:/home/vladimr/Desktop/git/zpo-cpp/lab3/main.cpp
+	<iostream>
+	"Adding.h"
+	"Student.h"
+	"Array.h"
+
+1728140530 /home/vladimr/Desktop/git/zpo-cpp/lab3/include/Adding.h
+	<iostream>
+
+1728140530 source:/home/vladimr/Desktop/git/zpo-cpp/lab3/src/Adding.cpp
+	"Adding.h"
+
+1728141223 source:/home/vladimr/Desktop/git/zpo-cpp/lab3/src/Student.cpp
+	"Student.h"
+
+1728146666 /home/vladimr/Desktop/git/zpo-cpp/lab3/include/Student.h
+	<iostream>
+
+1728146768 /home/vladimr/Desktop/git/zpo-cpp/lab3/include/Array.h
+	<iostream>
+	<typeinfo>
+
+1728146276 source:/home/vladimr/Desktop/git/zpo-cpp/lab3/src/Array.cpp
+	"Array.h"
+
