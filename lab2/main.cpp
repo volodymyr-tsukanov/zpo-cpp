@@ -6,6 +6,9 @@
 #include "Employee.h"
 #include "Developer.h"
 #include "TeamLeader.h"
+#include "Buffor.h"
+#include "MaxBufor.h"
+#include "MeanBufor.h"
 
 using namespace std;
 
@@ -76,7 +79,7 @@ int main()
         delete tab[i];
     }*/
 
-    /*zad2.2*/
+    /*zad2.2
     Emplyees emps;
     emps.n = 10;
     emps.tab = new Employee*[emps.n];
@@ -92,7 +95,18 @@ int main()
 
     //cleanup
     for(int i = 0; i < emps.n; i++) delete emps.tab[i];
-    delete[] emps.tab;
+    delete[] emps.tab;*/
+
+    /*zad2.3*/
+    MeanBufor mnb = MeanBufor();
+    mnb.setAllocStep(9999);
+    MaxBufor mxb = MaxBufor(99913000);
+
+    for(int i = 89150000; i > 0; i--){
+        mnb.add(i); mxb.add(i);
+    }
+    //mnb.show(); mxb.show();
+    cout << "mean: "<<mnb.calculate()<<"; max: "<<mxb.calculate() << endl;
 
     return 0;
 }

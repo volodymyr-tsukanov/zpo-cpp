@@ -34,17 +34,23 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Buffor.h" />
 		<Unit filename="include/Circle.h" />
 		<Unit filename="include/Developer.h" />
 		<Unit filename="include/Employee.h" />
 		<Unit filename="include/Figure.h" />
+		<Unit filename="include/MaxBufor.h" />
+		<Unit filename="include/MeanBufor.h" />
 		<Unit filename="include/Square.h" />
 		<Unit filename="include/TeamLeader.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Buffor.cpp" />
 		<Unit filename="src/Circle.cpp" />
 		<Unit filename="src/Developer.cpp" />
 		<Unit filename="src/Employee.cpp" />
 		<Unit filename="src/Figure.cpp" />
+		<Unit filename="src/MaxBufor.cpp" />
+		<Unit filename="src/MeanBufor.cpp" />
 		<Unit filename="src/Square.cpp" />
 		<Unit filename="src/TeamLeader.cpp" />
 		<Extensions>

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1728130499 source:/home/vladimr/Desktop/git/zpo-cpp/lab2/main.cpp
+1728136201 source:/home/vladimr/Desktop/git/zpo-cpp/lab2/main.cpp
 	<iostream>
 	<string>
 	"Figure.h"
@@ -8,6 +8,9 @@
 	"Employee.h"
 	"Developer.h"
 	"TeamLeader.h"
+	"Buffor.h"
+	"MaxBufor.h"
+	"MeanBufor.h"
 
 1728121246 source:/home/vladimr/Desktop/git/zpo-cpp/lab2/src/Figure.cpp
 	<iostream>
@@ -48,4 +51,22 @@
 
 1728128702 /home/vladimr/Desktop/git/zpo-cpp/lab2/include/TeamLeader.h
 	"Employee.h"
+
+1728136644 source:/home/vladimr/Desktop/git/zpo-cpp/lab2/src/Buffor.cpp
+	"Buffor.h"
+
+1728136605 /home/vladimr/Desktop/git/zpo-cpp/lab2/include/Buffor.h
+	<iostream>
+
+1728135364 source:/home/vladimr/Desktop/git/zpo-cpp/lab2/src/MaxBufor.cpp
+	"MaxBufor.h"
+
+1728135261 /home/vladimr/Desktop/git/zpo-cpp/lab2/include/MaxBufor.h
+	"Buffor.h"
+
+1728135058 source:/home/vladimr/Desktop/git/zpo-cpp/lab2/src/MeanBufor.cpp
+	"MeanBufor.h"
+
+1728134676 /home/vladimr/Desktop/git/zpo-cpp/lab2/include/MeanBufor.h
+	"Buffor.h"
 
