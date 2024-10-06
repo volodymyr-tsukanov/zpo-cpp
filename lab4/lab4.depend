@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1728217989 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+
+1728218137 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/Even.cpp
+	"Even.h"
+
+1728218100 /home/vladimr/Desktop/git/zpo-cpp/lab4/include/Even.h
+
