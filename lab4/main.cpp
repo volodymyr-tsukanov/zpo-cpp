@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <random>
 #include "Even.h"
 #include "Student.h"
 #include "Compare.h"
+#include "City.h"
 
 using namespace std;
 
@@ -37,9 +39,40 @@ void showMark(Student &s)
     cout << s.getMark() << " ";
 }
 
+void randRange(int &i, mt19937 eng){
+    uniform_int_distribution<> distr(-100, 100);
+    i = distr(eng);
+}
+
+void showCities(vector<City> c){
+    for(int i = 0; i < c.size(); i++){
+        City rc = c[i];
+        rc.show_city();
+    }
+}
+void statistic(vector <City> c){
+    for(int i = 0; i < c.size(); i++){
+        City rc = c[i];
+        cout << rc.getCityName()<<" => adults: "<<rc.adults()<<"; girls: "<<rc.women() << endl;
+        rc.postal_codes();
+    }
+}
+void the_most(vector<City> c, int mode){
+
+}
+funkcja szuka danych określonych przez
+parametr mode (tryb) oraz wyświetla informacje na konsolę. Każdy z podpunktów
+powinien zostać zrealizowany w oddzielnej funkcji. Tryb:
+1. Miasto, w którym jest najwięcej różnych kodów pocztowych;
+2. Miasto, w którym mieszka najmniej mieszkańców;
+
 
 int main()
 {
+    random_device rd;
+    mt19937 eng (rd());
+    uniform_int_distribution<> distr(10, 100);
+    uniform_int_distribution<> distr2(-100, 100);
     /*1
     vector<int> vec;
     vec.push_back(1);
@@ -121,7 +154,7 @@ int main()
     bind2nd(greater<int>( ),0));
     cout<<endl<<"wersja1: wartosc > 0 "<<howMany<<endl;
     greater<int> f;
-    howMany=count_if(num3.begin( ), num3.end( ),
+    howMany=count_if(distr2num3.begin( ), num3.end( ),
     bind2nd(f,0));
     cout<<"wersja2: wartosc > 0 "<<howMany<<endl;
     cout<<"Przed sortowaniem"<<endl;
@@ -137,7 +170,7 @@ int main()
     cout<<count_if(num4.begin(),num4.end(),isEven)<<endl;
     cout<<count_if(num4.begin(),num4.end(),Even(2))<<endl;*/
 
-    /*5 */
+    /*5
     vector<Student>st;
     st.push_back(Student(1,"Ala"));
     st.push_back(Student(5,"Ola"));
@@ -145,7 +178,22 @@ int main()
     for_each(st.begin(),st.end(),showMark);
     cout<<endl;
     sort(st.begin(),st.end(),Compare());
-    for_each(st.begin(),st.end(),showMark);
+    for_each(st.begin(),st.end(),showMark);*/
+
+    /*zad4.2
+    int n = distr(eng);
+    vector<int> l1 (n);
+    for(int i = 0; i < n; i++){
+        l1[i] = distr2(eng);
+    }
+//    for_each(l1.begin(), l1.end(), [eng](int &i){
+//            randRange(i, eng);
+//         });
+    sort(l1.begin(), l1.end(), greater<int>());
+    show(l1);*/
+
+    /*zad4.3 */
+    vector<City> cts;
 
     return 0;
 }

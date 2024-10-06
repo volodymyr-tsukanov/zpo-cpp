@@ -1,11 +1,42 @@
 # depslib dependency file v1.0
-1728217989 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/main.cpp
+1728226698 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/main.cpp
 	<iostream>
 	<vector>
 	<algorithm>
+	<random>
+	"Even.h"
+	"Student.h"
+	"Compare.h"
+	"City.h"
 
 1728218137 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/Even.cpp
 	"Even.h"
 
 1728218100 /home/vladimr/Desktop/git/zpo-cpp/lab4/include/Even.h
+
+1728218813 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/Compare.cpp
+	"Compare.h"
+
+1728218813 /home/vladimr/Desktop/git/zpo-cpp/lab4/include/Compare.h
+	"Student.h"
+
+1728218764 /home/vladimr/Desktop/git/zpo-cpp/lab4/include/Student.h
+	<iostream>
+
+1728218765 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/Student.cpp
+	"Student.h"
+
+1728223039 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/Citizen.cpp
+	"Citizen.h"
+
+1728223217 /home/vladimr/Desktop/git/zpo-cpp/lab4/include/Citizen.h
+	<iostream>
+
+1728227146 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/City.cpp
+	"City.h"
+
+1728227956 /home/vladimr/Desktop/git/zpo-cpp/lab4/include/City.h
+	<vector>
+	<algorithm>
+	"Citizen.h"
 
