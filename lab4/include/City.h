@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include "Citizen.h"
+#include "Map.h"
 
 using namespace std;
 
@@ -23,6 +24,7 @@ public:
     int city_citizens();
     int women();
     int adults();
+    int postalCodesCount();
 
     void addCitizen(Citizen citizen);
     bool deleteCitizen(string surname, int age);

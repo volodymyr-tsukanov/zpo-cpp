@@ -33,7 +33,7 @@ string Citizen::getPostalCode()
 
 void Citizen::show()
 {
-    cout << "ctzn "<<postal_code<<"-{"<<name<<" "<<surname<<" aged "<<age<<" se'x"<<sex<<"}" << endl;
+    cout << "ctzn "<<postal_code<<"-{"<<name<<" "<<surname<<" aged "<<age<<"; sex 😮‍💨 "<<sex<<"}" << endl;
 }
 
 

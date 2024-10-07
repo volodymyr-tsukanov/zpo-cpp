@@ -50,6 +50,13 @@ void showCities(vector<City> c){
         rc.show_city();
     }
 }
+void showCities(vector<City> c, bool full){
+    for(int i = 0; i < c.size(); i++){
+        City rc = c[i];
+        rc.show_city();
+        rc.show_citizens();
+    }
+}
 void statistic(vector <City> c){
     for(int i = 0; i < c.size(); i++){
         City rc = c[i];
@@ -57,14 +64,38 @@ void statistic(vector <City> c){
         rc.postal_codes();
     }
 }
-void the_most(vector<City> c, int mode){
-
+City the_most_postalCodes(vector<City> c){
+    auto itMax = c.begin();
+    auto it = c.begin();
+    while(++it != c.end()){
+        if((*it).postalCodesCount() > (*itMax).postalCodesCount())
+            itMax = it;
+    }
+    return *itMax;
 }
-funkcja szuka danych określonych przez
-parametr mode (tryb) oraz wyświetla informacje na konsolę. Każdy z podpunktów
-powinien zostać zrealizowany w oddzielnej funkcji. Tryb:
-1. Miasto, w którym jest najwięcej różnych kodów pocztowych;
-2. Miasto, w którym mieszka najmniej mieszkańców;
+City the_less_citizens(vector<City> c){
+    auto itMin = c.begin();
+    auto it = c.begin();
+    while(++it != c.end()){
+        if((*it).city_citizens() < (*itMin).city_citizens())
+            itMin = it;
+    }
+    return *itMin;
+}
+void the_most(vector<City> c, int mode){
+    switch (mode)
+    {
+    case 2:
+    cout << "Less citizens in "<<the_less_citizens(c).getCityName() << endl;
+        break;
+    default:
+    cout << "Most postal codes in "<<the_most_postalCodes(c).getCityName() << endl;
+        break;
+    }
+}
+void sort_cities(vector <City>& c){
+    sort(c.begin(), c.end(), Compare());
+}
 
 
 int main()
@@ -73,6 +104,8 @@ int main()
     mt19937 eng (rd());
     uniform_int_distribution<> distr(10, 100);
     uniform_int_distribution<> distr2(-100, 100);
+    uniform_int_distribution<> distr_age(0, 100);
+    uniform_int_distribution<> distr_code(10, 99);
     /*1
     vector<int> vec;
     vec.push_back(1);
@@ -193,7 +226,34 @@ int main()
     show(l1);*/
 
     /*zad4.3 */
+    int i1;
     vector<City> cts;
+    City c1 ("Lublin");
+    for(i1 = distr(eng); i1 > 0; i1--){
+        c1.addCitizen(Citizen("Ala", "Elska", distr_age(eng), '-', "1-"+to_string(distr_code(eng))));
+    }
+    cts.push_back(c1);
+    City c2 ("Dublin");
+    for(i1 = distr(eng); i1 > 0; i1--){
+        c2.addCitizen(Citizen("Robert", "Harsh", distr_age(eng), 'm', "2-"+to_string(distr_code(eng))));
+    }
+    cts.push_back(c2);
+    City c3 ("London");
+    for(i1 = distr(eng); i1 > 0; i1--){
+        c3.addCitizen(Citizen("Hanna", "Tuah", distr_age(eng), 'w', "3-"+to_string(distr_code(eng))));
+    }
+    cts.push_back(c3);
+
+    //cout << c1.city_citizens()<<" "<<c1.postalCodesCount() << endl;
+
+    showCities(cts, true);
+    statistic(cts);
+    the_most(cts, 1);
+    the_most(cts, 2);
+
+    cout << "\nAfter sort" << endl;
+    sort_cities(cts);
+    showCities(cts);
 
     return 0;
 }

@@ -1,6 +1,7 @@
 #ifndef MAP_H
 #define MAP_H
 #include <iostream>
+#include <vector>
 #include <list>
 
 using namespace std;
@@ -8,16 +9,24 @@ using namespace std;
 
 class Map
 {
+protected:
+    struct Entry{
+        string key;
+        int value;
+    };
+
 private:
-    list<int> cTab;
-    list<string> tab;
+    list<Entry> tab;
+
+    void add(string elem, bool force_push);
 
 public:
-    Map();
-    ~Map();
+    int getSize();
 
     void add(string elem);
     void rmv(string elem);
+
+    void print();
 };
 
 #endif // MAP_H

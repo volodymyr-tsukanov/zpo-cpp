@@ -31,20 +31,27 @@ int City::adults()
                     });
 }
 
+int City::postalCodesCount()
+{
+    return postalCodes.getSize();
+}
+
 
 void City::addCitizen(Citizen citizen)
 {
     citizens.push_back(citizen);
+    postalCodes.add(citizen.getPostalCode());
 }
 
 bool City::deleteCitizen(string surname, int age)
 {
-    auto citizen = find_if(citizens.begin(), citizens.end(), [surname, age](Citizen& c){
+    vector<Citizen>::iterator citizen = find_if(citizens.begin(), citizens.end(), [surname, age](Citizen& c){
               return  c.getSurname() == surname && c.getAge() == age;
               });
 
     if(citizen == citizens.end()) return false;
     else{
+        postalCodes.rmv((*citizen).getPostalCode());
         citizens.erase(citizen);
         return true;
     }
@@ -69,6 +76,7 @@ void City::show_citizens()
 void City::postal_codes()
 {
     cout << "Postal code stats:-{" << endl;
+    postalCodes.print();
     cout << "}\n\n" << endl;
 }
 
