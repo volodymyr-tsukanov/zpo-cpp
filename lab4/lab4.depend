@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1728328078 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/main.cpp
+1728375269 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/main.cpp
 	<iostream>
 	<vector>
 	<algorithm>
@@ -8,6 +8,7 @@
 	"Student.h"
 	"Compare.h"
 	"City.h"
+	"NumSum.h"
 
 1728218137 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/Even.cpp
 	"Even.h"
@@ -49,4 +50,9 @@
 
 1728327372 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/Map.cpp
 	"Map.h"
+
+1728331275 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/NumSum.cpp
+	"NumSum.h"
+
+1728375215 /home/vladimr/Desktop/git/zpo-cpp/lab4/include/NumSum.h
 

@@ -6,6 +6,7 @@
 #include "Student.h"
 #include "Compare.h"
 #include "City.h"
+#include "NumSum.h"
 
 using namespace std;
 
@@ -16,6 +17,14 @@ void show(T &con)
     for(typename T::iterator it=con.begin( ); it!=con.end( ); it++)
         cout<<*it<<" ";
     cout<<endl;
+}
+void print2(int& el)
+{
+    cout<<el<<" | ";
+}
+void show(vector<int>& v, bool _for_each){
+    for_each(v.begin(), v.end(), print2);
+    cout << endl;
 }
 
 void print(int& el)
@@ -104,6 +113,7 @@ int main()
     mt19937 eng (rd());
     uniform_int_distribution<> distr(10, 100);
     uniform_int_distribution<> distr2(-100, 100);
+    uniform_int_distribution<> distr3(-10000, 10000);
     uniform_int_distribution<> distr_age(0, 100);
     uniform_int_distribution<> distr_code(10, 99);
     /*1
@@ -225,7 +235,7 @@ int main()
     sort(l1.begin(), l1.end(), greater<int>());
     show(l1);*/
 
-    /*zad4.3 */
+    /*zad4.3
     int i1;
     vector<City> cts;
     City c1 ("Lublin");
@@ -253,7 +263,22 @@ int main()
 
     cout << "\nAfter sort" << endl;
     sort_cities(cts);
-    showCities(cts);
+    showCities(cts);*/
+
+    /*zad4.4 */
+    vector<int> v6;
+    for(int i = 0; i < 10; i++){
+        v6.push_back(distr3(eng));
+    }
+    show(v6, true);
+    sort(v6.begin(), v6.end(), NumSum());
+    cout << "sort ascending num sum" << endl;
+    show(v6, true);
+    sort(v6.begin(), v6.end(), [](int& a, int& b){
+        return NumSum () (a, b, true);
+        });
+    cout << "sort descending num count" << endl;
+    show(v6, true);
 
     return 0;
 }
