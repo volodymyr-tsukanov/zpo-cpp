@@ -3,6 +3,7 @@
 #include <vector>
 #include <set>
 #include <map>
+#include "Dictionary.h"
 
 using namespace std;
 
@@ -88,9 +89,24 @@ int main()
     set<int> st2 = {4, 5, 1, 9, 0};
     showSetIntersection(st1, st2);*/
 
-    /*zad5.3 */
+    /*zad5.3 
     string s1 = "i - boss", s2 = "s bo-s ";
-    cout << "different char: '"<<findDifference(s1, s2)<<"'" << endl;
+    cout << "different char: '"<<findDifference(s1, s2)<<"'" << endl;*/
+
+    /*zad5.4 */
+    Dictionary dic;
+    dic.addWord("sun", "słońce");
+    dic.addWord("duck", "kaczka");
+    dic.addWord("dick", "imię się nie tłumaczy 😈");
+    dic.addWord("son", "syn");
+    dic.addWord("sus", "?؟ ");
+    dic.addWord("sos", "pomocy");
+    dic.addWord("arm", "ręka");
+    cout << "Alphabetically" << endl;
+    dic.print(true);
+    dic.translate("sun");
+    dic.rmvWord("dick");
+    dic.print();
 
     return 0;
 }

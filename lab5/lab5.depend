@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1728385370 source:/home/vladimr/Desktop/git/zpo-cpp/lab5/main.cpp
+	<iostream>
+	<algorithm>
+	<vector>
+	<set>
+	<map>
+	"Dictionary.h"
+
+1728384512 /home/vladimr/Desktop/git/zpo-cpp/lab5/include/Dictionary.h
+	<iostream>
+	<algorithm>
+	<map>
+	<vector>
+
+1728385401 source:/home/vladimr/Desktop/git/zpo-cpp/lab5/src/Dictionary.cpp
+	"Dictionary.h"
+
