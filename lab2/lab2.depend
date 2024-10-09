@@ -70,3 +70,132 @@
 1728134676 /home/vladimr/Desktop/git/zpo-cpp/lab2/include/MeanBufor.h
 	"Buffor.h"
 
+1728468646 source:/home/student/Pobrane/lab/zpo-cpp/lab2/src/Buffor.cpp
+	"Buffor.h"
+
+1728468646 /home/student/Pobrane/lab/zpo-cpp/lab2/include/Buffor.h
+	<iostream>
+
+1728468646 source:/home/student/Pobrane/lab/zpo-cpp/lab2/src/Circle.cpp
+	<iostream>
+	"Figure.h"
+	"Circle.h"
+
+1728468646 /home/student/Pobrane/lab/zpo-cpp/lab2/include/Figure.h
+
+1728468646 /home/student/Pobrane/lab/zpo-cpp/lab2/include/Circle.h
+	"Figure.h"
+
+1728468646 source:/home/student/Pobrane/lab/zpo-cpp/lab2/src/Developer.cpp
+	"Developer.h"
+
+1728468646 /home/student/Pobrane/lab/zpo-cpp/lab2/include/Developer.h
+	"Employee.h"
+
+1728468646 /home/student/Pobrane/lab/zpo-cpp/lab2/include/Employee.h
+	<iostream>
+
+1728468646 source:/home/student/Pobrane/lab/zpo-cpp/lab2/src/Employee.cpp
+	"Employee.h"
+
+1728468646 source:/home/student/Pobrane/lab/zpo-cpp/lab2/src/Figure.cpp
+	<iostream>
+	"Figure.h"
+
+1728468646 source:/home/student/Pobrane/lab/zpo-cpp/lab2/src/MaxBufor.cpp
+	"MaxBufor.h"
+
+1728468646 /home/student/Pobrane/lab/zpo-cpp/lab2/include/MaxBufor.h
+	"Buffor.h"
+
+1728468646 source:/home/student/Pobrane/lab/zpo-cpp/lab2/src/MeanBufor.cpp
+	"MeanBufor.h"
+
+1728468646 /home/student/Pobrane/lab/zpo-cpp/lab2/include/MeanBufor.h
+	"Buffor.h"
+
+1728468646 source:/home/student/Pobrane/lab/zpo-cpp/lab2/src/Square.cpp
+	<iostream>
+	"Figure.h"
+	"Square.h"
+
+1728468646 /home/student/Pobrane/lab/zpo-cpp/lab2/include/Square.h
+	"Figure.h"
+
+1728468646 source:/home/student/Pobrane/lab/zpo-cpp/lab2/src/TeamLeader.cpp
+	"TeamLeader.h"
+
+1728468646 /home/student/Pobrane/lab/zpo-cpp/lab2/include/TeamLeader.h
+	"Employee.h"
+
+1728470447 source:/home/student/Pobrane/lab/lab2/main.cpp
+	<iostream>
+	<string>
+	"Figure.h"
+	"Square.h"
+	"Circle.h"
+	"Employee.h"
+	"Developer.h"
+	"TeamLeader.h"
+	"Buffor.h"
+	"MaxBufor.h"
+	"MeanBufor.h"
+
+1728468646 /home/student/Pobrane/lab/lab2/include/Figure.h
+
+1728468646 /home/student/Pobrane/lab/lab2/include/Square.h
+	"Figure.h"
+
+1728468646 /home/student/Pobrane/lab/lab2/include/Circle.h
+	"Figure.h"
+
+1728468646 /home/student/Pobrane/lab/lab2/include/Employee.h
+	<iostream>
+
+1728468646 /home/student/Pobrane/lab/lab2/include/Developer.h
+	"Employee.h"
+
+1728468646 /home/student/Pobrane/lab/lab2/include/TeamLeader.h
+	"Employee.h"
+
+1728468646 /home/student/Pobrane/lab/lab2/include/Buffor.h
+	<iostream>
+
+1728468646 /home/student/Pobrane/lab/lab2/include/MaxBufor.h
+	"Buffor.h"
+
+1728468646 /home/student/Pobrane/lab/lab2/include/MeanBufor.h
+	"Buffor.h"
+
+1728468646 source:/home/student/Pobrane/lab/lab2/src/Buffor.cpp
+	"Buffor.h"
+
+1728468646 source:/home/student/Pobrane/lab/lab2/src/Circle.cpp
+	<iostream>
+	"Figure.h"
+	"Circle.h"
+
+1728468646 source:/home/student/Pobrane/lab/lab2/src/Developer.cpp
+	"Developer.h"
+
+1728468646 source:/home/student/Pobrane/lab/lab2/src/Employee.cpp
+	"Employee.h"
+
+1728468646 source:/home/student/Pobrane/lab/lab2/src/Figure.cpp
+	<iostream>
+	"Figure.h"
+
+1728468646 source:/home/student/Pobrane/lab/lab2/src/MaxBufor.cpp
+	"MaxBufor.h"
+
+1728468646 source:/home/student/Pobrane/lab/lab2/src/MeanBufor.cpp
+	"MeanBufor.h"
+
+1728468646 source:/home/student/Pobrane/lab/lab2/src/Square.cpp
+	<iostream>
+	"Figure.h"
+	"Square.h"
+
+1728468646 source:/home/student/Pobrane/lab/lab2/src/TeamLeader.cpp
+	"TeamLeader.h"
+

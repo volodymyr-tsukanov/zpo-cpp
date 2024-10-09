@@ -53,6 +53,10 @@ void whoWorkMoreThan5Years(Emplyees emps){
 
 int main()
 {
+    int zadN = 1;
+    printf("n?: ");
+    cin >> zadN;
+
     /*1
     Figure* f1 = new Square(4);
     Figure* f2 = new Circle(2);
@@ -66,47 +70,50 @@ int main()
     delete f1;
     delete f2;*/
 
-    /*zad2.1
-    Figure* tab[3];
-    tab[0]=new Square(4);
-    tab[1]=new Square(2);
-    tab[2]=new Circle(5);
-    for(int i=0;i<3;i++)
-    {
-        tab[i]->calculateArea();
-        tab[i]->calculatePerimeter();
-        tab[i]->show();
-        delete tab[i];
-    }*/
+    switch(zadN){
+    case 1:
+        Figure* tab[3];
+        tab[0]=new Square(4);
+        tab[1]=new Square(2);
+        tab[2]=new Circle(5);
+        for(int i=0;i<3;i++)
+        {
+            tab[i]->calculateArea();
+            tab[i]->calculatePerimeter();
+            tab[i]->show();
+            delete tab[i];
+        }
+    break;
+    case 2:
+        Emplyees emps;
+        emps.n = 10;
+        emps.tab = new Employee*[emps.n];
+        for(int i = 0; i < emps.n-1; i++){
+            string sname = "Adamski-"+to_string(i+1);
+            emps.tab[i] = new Developer(sname, 18+i, i, 99.98);
+        }
+        emps.tab[emps.n-1] = new TeamLeader("Evovska", 67, 47, 319190.99);
 
-    /*zad2.2
-    Emplyees emps;
-    emps.n = 10;
-    emps.tab = new Employee*[emps.n];
-    for(int i = 0; i < emps.n-1; i++){
-        string sname = "Adamski-"+to_string(i+1);
-        emps.tab[i] = new Developer(sname, 18+i, i, 99.98);
+        whoWorkMoreThan5Years(emps);
+        cout << "\n\n\n";
+        howManyEarnLessThanMeanBonus(emps, 40);
+
+        //cleanup
+        for(int i = 0; i < emps.n; i++) delete emps.tab[i];
+        delete[] emps.tab;
+    break;
+    case 3:
+        MeanBufor mnb = MeanBufor();
+        //mnb.setAllocStep(9999);
+        MaxBufor mxb = MaxBufor(99);
+
+        for(int i = 199; i > 0; i--){
+            mnb.add(i); mxb.add(i);
+        }
+        //mnb.show(); mxb.show();
+        cout << "mean: "<<mnb.calculate()<<"; max: "<<mxb.calculate() << endl;
+    break;
     }
-    emps.tab[emps.n-1] = new TeamLeader("Evovska", 67, 47, 319190.99);
-
-    whoWorkMoreThan5Years(emps);
-    cout << "\n\n\n";
-    howManyEarnLessThanMeanBonus(emps, 40);
-
-    //cleanup
-    for(int i = 0; i < emps.n; i++) delete emps.tab[i];
-    delete[] emps.tab;*/
-
-    /*zad2.3*/
-    MeanBufor mnb = MeanBufor();
-    mnb.setAllocStep(9999);
-    MaxBufor mxb = MaxBufor(99913000);
-
-    for(int i = 89150000; i > 0; i--){
-        mnb.add(i); mxb.add(i);
-    }
-    //mnb.show(); mxb.show();
-    cout << "mean: "<<mnb.calculate()<<"; max: "<<mxb.calculate() << endl;
 
     return 0;
 }
