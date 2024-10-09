@@ -24,3 +24,28 @@
 1728146276 source:/home/vladimr/Desktop/git/zpo-cpp/lab3/src/Array.cpp
 	"Array.h"
 
+1728472345 source:/home/student/Pobrane/lab/zpo-cpp/lab3/src/Adding.cpp
+	"Adding.h"
+
+1728472345 /home/student/Pobrane/lab/zpo-cpp/lab3/include/Adding.h
+	<iostream>
+
+1728472345 source:/home/student/Pobrane/lab/zpo-cpp/lab3/src/Array.cpp
+	"Array.h"
+
+1728472345 /home/student/Pobrane/lab/zpo-cpp/lab3/include/Array.h
+	<iostream>
+	<typeinfo>
+
+1728472345 source:/home/student/Pobrane/lab/zpo-cpp/lab3/src/Student.cpp
+	"Student.h"
+
+1728472345 /home/student/Pobrane/lab/zpo-cpp/lab3/include/Student.h
+	<iostream>
+
+1728472799 source:/home/student/Pobrane/lab/zpo-cpp/lab3/main.cpp
+	<iostream>
+	"Adding.h"
+	"Student.h"
+	"Array.h"
+
