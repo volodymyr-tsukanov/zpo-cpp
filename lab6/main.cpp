@@ -9,6 +9,7 @@
 #include <boost/bind.hpp>
 //#include <boost/>
 #include <iostream>
+#include <algorithm>
 #include <vector>
 #include "Person.h"
 #include "Contact.h"
@@ -83,6 +84,50 @@ void AlaToAlicja(Person& x) {
     if(x.name=="Ala")
     x.name="Alicja";
 }
+
+
+void procT(const double& t, double* sum, vector<double>* sortedV){
+    *sum +=t;
+    sortedV->push_back(t);
+}
+void lessAvgT(const double& t, const double avg){
+    if(t < avg) cout << t <<" ";
+}
+void betweenRangeT(const double& t, double rangeStart, double rangeEnd){
+    if(rangeEnd < rangeStart) swap(rangeStart, rangeEnd);
+    if(t > rangeStart && t < rangeEnd) cout << t<<" ";
+}
+void positioveT(const double& t){
+    if(t > 0) cout << t <<" ";
+}
+template <typename T>
+void zad63(vector<T>& v){
+    int n = v.size(), idx = 0;
+    double avg = 0.0, mean = 0.0;
+    vector<double> vw;
+
+    for_each(v.begin(),v.end(),boost::bind(procT,_1,&avg,&vw));
+    avg /= n;
+
+    sort(vw.begin(), vw.end(), greater_equal<double>());   //niemalejaco
+    mean = vw[n/2];
+
+    cout << "avg: "<<avg<<" | mean: "<<mean << endl;
+    cout << "less avg: ";
+    for_each(v.begin(),v.end(),boost::bind(lessAvgT,_1,avg));
+    cout << "\nbetween avg and mean: ";
+    for_each(v.begin(),v.end(),boost::bind(betweenRangeT,_1,avg,mean));
+    cout << "\npositive😀: ";
+    for_each(v.begin(),v.end(),boost::bind(positioveT,_1));
+}
+/*
+• elementów mniejszych niż średnia arytmetyczna wszystkich elementów;
+• elementów znajdujących się między średnią arytmetyczna a medianą wszystkich
+elementów;
+• elementów dodatnich.
+Można skorzystać z elementów biblioteki functional. Wykaz operatorów można znaleźć na
+stronie http://www.cplusplus.com/reference/functional/ W celu przekazania argumentów do
+funkcji należy użyć funkcji bind.*/
 
 
 int main()
@@ -251,6 +296,21 @@ int main()
     break;
     case 3:
     {
+        cout << "(int)" << endl;
+        vector<int> vi = {7,1,2,6,3,4,5,-87};
+        zad63<int>(vi);
+        cout << "\n\n(float)";
+        vector<float> vf = {7.0,1.0,2.0,6.0,3.0,4.0,5.0,-86.9999};
+        zad63<float>(vf);
+        cout << "\n\n(bool)";
+        vector<bool> vb = {true,false,false,true,true};
+        zad63<bool>(vb);
+        cout << "\n\n(char)";
+        vector<char> vc = {'c','p','p','+'};
+        zad63<char>(vc);
+        /*cout << "\n\n(string)";
+        vector<string> vs = {"true","false","was","ist","das"};
+        zad63<string>(vs);*/
     }
     break;
     default:
