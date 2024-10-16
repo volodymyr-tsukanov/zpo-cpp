@@ -49,3 +49,27 @@
 	"Student.h"
 	"Array.h"
 
+1729074705 source:c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab3\main.cpp
+	<iostream>
+	"Adding.h"
+	"Student.h"
+	"Array.h"
+
+1729073904 c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab3\include\adding.h
+	<iostream>
+
+1729073904 c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab3\include\student.h
+	<iostream>
+
+1729074102 c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab3\include\array.h
+	<iostream>
+	<typeinfo>
+
+1729073904 source:c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab3\src\adding.cpp
+	"Adding.h"
+
+1729073904 source:c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab3\src\student.cpp
+	"Student.h"
+
+1729074094 source:c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab3\src\array.cpp
+

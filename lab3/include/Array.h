@@ -19,6 +19,7 @@ protected:
 public:
     Array(int _size);
     Array() : Array(10){};
+    Array(initializer_list<T> il);
     ~Array();
 
     T getByIndex(int index);
@@ -35,6 +36,14 @@ Array<T>::Array(int _size)
 {
     tab = new T[_size];
     n = _size;
+}
+template <typename T>
+Array<T>::Array(initializer_list<T> il)
+{
+    tab = new T[il.size()];
+    n = il.size();
+
+    for(auto it = il.begin(); it != il.end(); ++it) add(*it);
 }
 template <typename T>
 Array<T>::~Array()
@@ -71,6 +80,10 @@ template <typename T>
 bool Array<T>::isGreater(T a, T b){
     return a > b;
 }
+template <>
+bool Array<string>::isGreater(string a, string b) {
+    return a.length() > b.length();
+}
 
 
 template <typename T>
@@ -94,6 +107,7 @@ void Array<T>::show()
         cout << i<<") "<<tab[i] << endl;
     }
 }
+
 
 
 #endif // ARRAY_H

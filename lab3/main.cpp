@@ -23,7 +23,7 @@ template <typename T>
 T* findMin(T* tab[], int n){
     T* m = tab[0];
     for(int i = 1; i < n; i++){
-        if(tab[i] < m) m = tab[i];
+        if(tab[i] > m) m = tab[i];
     }
     return m;
 }
@@ -31,7 +31,7 @@ T* findMin(T* tab[], int n){
 
 int main()
 {
-    int zadN = 1, n = 6;
+    int zadN = 1, n = 10;
     printf("n?: ");
     cin >> zadN;
 
@@ -81,23 +81,17 @@ int main()
     break;
     case 2:
     {
-        Adding<int>* arrAdd[n];
+        Adding<double>* arrAdd[n];
         for(int i=0;i<n;i++)
-            arrAdd[i]=new Adding<int>(i-9);
+            arrAdd[i]=new Adding<double>(i-9-0.13);
         findMin(arrAdd, n)->show();
         }
     break;
     case 3:
     {
-        Array<int> arr_i = Array<int>(8);
-        Array<double> arr_d = Array<double>(7);
-        Array<string> arr_s = Array<string>(9);
-
-        for(int i = 0; i < n; i++){
-            arr_i.add(i);
-            arr_d.add(i+0.28);
-            arr_s.add("["+to_string(i+6)+"]");
-        }
+        Array<int> arr_i = Array<int>{19, 8, -2, 0, 6};
+        Array<double> arr_d = Array<double>{19.9, 8.13, -2.0, 0.13, 6.8};
+        Array<string> arr_s = Array<string>{"volodymyr", "tsukanov", "pentagon", "politechnika", "Lubelska"};
 
         arr_i.show();   arr_d.show();   arr_s.show();
 
@@ -106,6 +100,8 @@ int main()
         arr_i.sortAsc();    arr_d.sortAsc();   arr_s.sortAsc();
         cout << "\n\nafter sorting acs: " << endl;
         arr_i.show();   arr_d.show();   arr_s.show();
+
+        cout << arr_s.getByIndex(1);
     }
     break;
     default:
