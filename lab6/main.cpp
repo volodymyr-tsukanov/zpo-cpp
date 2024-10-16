@@ -120,6 +120,9 @@ void zad63(vector<T>& v){
     cout << "\npositive😀: ";
     for_each(v.begin(),v.end(),boost::bind(positioveT,_1));
 }
+
+void ileFusion(boost::fusion::vector<bool, int, float, double, char> v){
+}
 /*
 • elementów mniejszych niż średnia arytmetyczna wszystkich elementów;
 • elementów znajdujących się między średnią arytmetyczna a medianą wszystkich
@@ -311,6 +314,17 @@ int main()
         /*cout << "\n\n(string)";
         vector<string> vs = {"true","false","was","ist","das"};
         zad63<string>(vs);*/
+    }
+    case 4:
+    {
+        boost::fusion::vector<bool, int, float, double, char> v{10, 'C', true, 3.148238747, 4.1f};
+        ileFusion(v);
+        /*Napisz funkcję, która dostanie jako argument vector z biblioteki Fusion. O kontenerze
+wiadomo, że może przechowywać następujące typy: int, double, float, bool oraz char. Funkcja
+powinna zwrócić informację ile razy występuje dany typ w kontenerze w postaci mapy, której
+element będzie stanowić parę <typ, liczba wystąpień tego typu>.
+W celu sprawdzenia jaki typ danych jest przechowywany można wykorzystać funkcję
+typeid(variableName).name().*/
     }
     break;
     default:
