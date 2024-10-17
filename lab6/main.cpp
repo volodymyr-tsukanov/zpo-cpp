@@ -11,6 +11,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <map>
 #include "Person.h"
 #include "Contact.h"
 #include "Contacts.h"
@@ -121,16 +122,24 @@ void zad63(vector<T>& v){
     for_each(v.begin(),v.end(),boost::bind(positioveT,_1));
 }
 
-void ileFusion(boost::fusion::vector<bool, int, float, double, char> v){
+template <typename V>
+void ileFusion(V& v){
+    map<string,int> mp;
+
+    boost::fusion::for_each(v, [&mp](const auto& val) {
+        string type_name (typeid(val).name());
+        auto tp = mp.find(type_name);
+        if(tp == mp.end()){  //no such typename => add
+            mp.insert(pair<string,int>(type_name,1));
+        } else {
+            tp->second++;
+        }
+    });
+
+    for(auto it = mp.begin(); it != mp.end(); ++it){
+        cout << it->first<<" = "<<it->second << endl;
+    }
 }
-/*
-• elementów mniejszych niż średnia arytmetyczna wszystkich elementów;
-• elementów znajdujących się między średnią arytmetyczna a medianą wszystkich
-elementów;
-• elementów dodatnich.
-Można skorzystać z elementów biblioteki functional. Wykaz operatorów można znaleźć na
-stronie http://www.cplusplus.com/reference/functional/ W celu przekazania argumentów do
-funkcji należy użyć funkcji bind.*/
 
 
 int main()
@@ -317,14 +326,11 @@ int main()
     }
     case 4:
     {
-        boost::fusion::vector<bool, int, float, double, char> v{10, 'C', true, 3.148238747, 4.1f};
-        ileFusion(v);
-        /*Napisz funkcję, która dostanie jako argument vector z biblioteki Fusion. O kontenerze
-wiadomo, że może przechowywać następujące typy: int, double, float, bool oraz char. Funkcja
-powinna zwrócić informację ile razy występuje dany typ w kontenerze w postaci mapy, której
-element będzie stanowić parę <typ, liczba wystąpień tego typu>.
-W celu sprawdzenia jaki typ danych jest przechowywany można wykorzystać funkcję
-typeid(variableName).name().*/
+        boost::fusion::vector<bool,int,char,float,double> v (true,0,'s',9.87,8976.9953231);
+        auto v2 = push_back(v, 876);
+        auto v3 = push_back(v2, 554);
+        auto v4 = push_back(v3, 'i');
+        ileFusion(v4);
     }
     break;
     default:
