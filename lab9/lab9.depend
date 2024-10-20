@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1729455250 source:/home/vladimr/Desktop/git/zpo-cpp/lab9/main.cpp
+	<iostream>
+	<iomanip>
+	<fstream>
+	<limits>
+	"Error.h"
+
+1729455528 /home/vladimr/Desktop/git/zpo-cpp/lab9/include/Error.h
+	<iostream>
+

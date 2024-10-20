@@ -1,0 +1,54 @@
+#include <iostream>
+#include "Person.h"
+#include "Teacher.h"
+#include "Student.h"
+
+using namespace std;
+
+
+int main()
+{
+    int n = 3;  //teshffhbn
+
+    /*z1.1*/
+    printf("Static-static\n");
+    Student s_s[n];
+    for (int i = 0; i < n; i++){
+        s_s[i].init("std", "tst", i+1, "index");
+        s_s[i].showInfoStudent();
+    }
+
+    printf("\n\nDynamic-static\n");
+    Student* d_s = new Student[n];
+    for (int i = 0; i < n; i++){
+        d_s[i].init("std", "tst", i+1, "index");
+        d_s[i].showInfoStudent();
+    }   //tst
+
+    printf("\n\nStatic-dynamic\n");
+    Student* s_d[n];
+    for (int i = 0; i < n; i++){
+        s_d[i] = new Student("std", "tst", i+1, "index");
+        s_d[i] -> showInfoStudent();
+    }
+
+    printf("\n\Dynamic-dynamic\n");
+    Student** d_d = new Student*[n];
+    for (int i = 0; i < n; i++){
+        d_d[i] = new Student("std", "tst", i+1, "index");
+        d_d[i] -> showInfoStudent();
+    }
+    //test
+
+    //Cleanup
+    for (int i = 0; i < n; i++) {
+        delete d_d[i];
+        delete s_d[i];
+    }
+    delete[] d_d;
+
+
+    /*z1.2*/
+
+    return 0;
+}
