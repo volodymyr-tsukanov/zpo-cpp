@@ -2,9 +2,50 @@
 #include <iomanip>
 #include <fstream>
 #include <limits>
+#include <vector>
+#include <algorithm>
 #include "Error.h"
+#include "Student.h"
 
 using namespace std;
+
+
+void clearCin(){
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
+
+void saveToCSV(vector<Student>& students, string filename, char g='-') {
+    ofstream file(filename);
+    if (!file.is_open())
+        throw FileError("Nie można otworzyć pliku: " + filename);
+
+    file << "Imię;Nazwisko;Płeć;Ocena;Email\n";
+    for (const auto& student : students) {
+        if(g == '-' || g == student.gender){
+            file << student.firstName << ";"
+                << student.lastName << ";"
+                << student.gender << ";"
+                << student.grade << ";"
+                << student.email << "\n";
+        }
+    }
+
+    file.close();
+}
+
+void loadStudents(string filename, vector<Student>& students) {
+    ifstream file(filename);
+    if (!file.is_open())
+        throw FileError("Nie można otworzyć pliku: " + filename);
+
+    file.ignore(numeric_limits<streamsize>::max(), '\n'); //skip header
+    string line;
+    while (getline(file, line)) {
+        students.emplace_back(line);
+    }
+    file.close();
+}
 
 
 int main()
@@ -144,13 +185,12 @@ int main()
                         throw ArgOverflowError();
                     o += inp;
                     tries++;
-                } catch(TypeMissmatchError e){
+                } catch(TypeMissmatchError& e){
                     e.error();
-                    cin.clear();
-                    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                } catch(WrongArgError e){
+                    clearCin();
+                } catch(WrongArgError& e){
                     e.error();
-                } catch(ArgOverflowError e){
+                } catch(ArgOverflowError& e){
                     e.error();
                     tries++;
                 }
@@ -160,6 +200,137 @@ int main()
         break;
         case 3:
         {
+            int choice = 0;
+            try {
+                cout << "Podaj ścieżkę do pliku z danymi (dane.csv): ";
+                string filename;
+                cin >> filename;
+
+                vector<Student> students;
+                loadStudents(filename, students);
+
+                while (choice != 7) {
+                    cout << "\n1. Wyświetl książkę adresową\n"
+                            << "2. Dodaj studenta\n"
+                            << "3. Wyświetl osoby o podanym nazwisku\n"
+                            << "4. Stwórz pliki k.csv oraz m.csv\n"
+                            << "5. Wyświetl X pierwszych studentów\n"
+                            << "6. Posortuj studentów według oceny\n"
+                            << "7. Wyjście\n"
+                            << "Wybierz opcję: ";
+                    cin >> choice;
+
+                    switch (choice) {
+                        case 1:
+                            for(auto it = students.begin(); it != students.end(); ++it){
+                                it->show();
+                            }
+                            break;
+                        case 2: {
+                            int progress = 0;
+                            string fName, lName, email;
+                            char gender;
+                            double grade;
+
+                            // Input validation loop
+                            while (progress < 5) {
+                                try {
+                                    switch(progress){
+                                        case 0:
+                                            cout << "Podaj imię: ";
+                                            cin >> fName;
+                                            if (!Student::isValidName(fName))
+                                                throw ProgressError(progress,"Niepoprawne imię.");
+                                            progress++;
+                                            break;
+                                        case 1:
+                                            cout << "Podaj nazwisko: ";
+                                            cin >> lName;
+                                            if (!Student::isValidName(lName))
+                                                throw ProgressError(progress,"Niepoprawne nazwisko.");
+                                            progress++;
+                                            break;
+                                        case 2:
+                                            cout << "Podaj płeć (K/M): ";
+                                            cin >> gender;
+                                            if (!Student::isValidGender(gender))
+                                                throw ProgressError(progress,"Niepoprawna płeć.");
+                                            progress++;
+                                            break;
+                                        case 3:
+                                            cout << "Podaj ocenę: ";
+                                            if (!(cin >> grade))
+                                                throw ProgressError(progress,"Niepoprawna ocena.");
+                                            progress++;
+                                            break;
+                                        case 4:
+                                            clearCin();
+                                            cout << "Podaj email (opcjonalnie): ";
+                                            getline(cin, email);
+                                            if (!email.empty() && !Student::isValidEmail(email))
+                                                throw ProgressError(progress,"Niepoprawny email.");
+                                            progress++;
+                                            students.emplace_back(fName, lName, gender, grade, email);
+                                            break;
+                                    }
+                                } catch (ProgressError& e) {
+                                    e.error();
+                                    clearCin();
+                                }
+                            }
+                            break;
+                        }
+                        case 3: {
+                            // Displaying students by last name
+                            string searchLastName;
+                            cout << "Podaj nazwisko do wyszukania: ";
+                            cin >> searchLastName;
+
+                            for (const auto& student : students) {
+                                if (student.lastName == searchLastName) {
+                                    student.show();
+                                }
+                            }
+                            break;
+                        }
+                        case 4: {
+                            saveToCSV(students,"k.csv",'K');
+                            saveToCSV(students,"m.csv",'M');
+                            break;
+                        }
+                        case 5: {
+                            // Displaying first X students
+                            int X;
+                            cout << "Ilu pierwszych studentów chcesz wyświetlić? ";
+                            cin >> X;
+
+                            if (X > students.size()) {
+                                cout << "Jest tylko " << students.size()
+                                    << " studentów w bazie.\n";
+                                break;
+                            }
+
+                            for(auto it = students.begin(); it != students.begin() + X; ++it)
+                                it->show();
+                            break;
+                        }
+                        case 6: {
+                            sort(students.begin(), students.end(), [](const Student& a, const Student& b) {
+                                return a.grade < b.grade;
+                            });
+                            break;
+                        }
+                        case 7:
+                            saveToCSV(students, filename);
+                            break;
+                        default:
+                            cout<< "Niepoprawny wybór. Spróbuj ponownie.\n";
+                    }
+                }
+
+            } catch (FileError& e) {
+                e.error();
+            }
         }
         break;
         case 4:

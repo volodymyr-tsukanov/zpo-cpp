@@ -35,6 +35,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Error.h" />
+		<Unit filename="include/Student.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
