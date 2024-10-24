@@ -78,35 +78,56 @@ char findDifference(string& s1, string& s2){
 
 int main()
 {
-    /*zad5.1
-    int sum = 2;
-    vector<int> v1 = {1, 2, 3, 99, 4, 99};
-    auto res = findDuplicate(v1, sum);
-    cout << "sum = "<<sum<<"; duplicate is "<<*(res.first) << endl;*/
+    int zadN = 1;
+    while(zadN != 0){
+        printf("n?: ");
+        cin >> zadN;
 
-    /*zad5.2
-    set<int> st1 = {1, 2, 3, 4, 5};
-    set<int> st2 = {4, 5, 1, 9, 0};
-    showSetIntersection(st1, st2);*/
+        switch(zadN){
+        case 1:
+        {
+            int sum = 2;
+            vector<int> v1 = {1, 2, 3, 99, 4, 99};
+            auto res = findDuplicate(v1, sum);
+            cout << "sum = "<<sum<<"; duplicate is "<<*(res.first) << endl;
+        }
+        break;
+        case 2:
+        {
+            set<int> st1 = {1, 2, 3, 4, 5};
+            set<int> st2 = {4, 5, 1, 9, 0};
+            showSetIntersection(st1, st2);
+        }
+        break;
+        case 3:
+        {
+            string s1 = "i - boss", s2 = "s bo-s ";
+            cout << "different char: '"<<findDifference(s1, s2)<<"'" << endl;
+        }
+        break;
+        case 4:
+        {
+            Dictionary dic;
+            dic.addWord("sun", "słońce");
+            dic.addWord("duck", "kaczka");
+            dic.addWord("dick", "imię się nie tłumaczy 😈");
+            dic.addWord("son", "syn");
+            dic.addWord("sus", "?؟ ");
+            dic.addWord("sos", "pomocy");
+            dic.addWord("arm", "ręka");
+            cout << "Alphabetically" << endl;
+            dic.print(true);
+            dic.translate("sun");
+            dic.rmvWord("dick");
+            dic.print();
+        }
+        break;
+        default:
+        break;
+        }
 
-    /*zad5.3 
-    string s1 = "i - boss", s2 = "s bo-s ";
-    cout << "different char: '"<<findDifference(s1, s2)<<"'" << endl;*/
-
-    /*zad5.4 */
-    Dictionary dic;
-    dic.addWord("sun", "słońce");
-    dic.addWord("duck", "kaczka");
-    dic.addWord("dick", "imię się nie tłumaczy 😈");
-    dic.addWord("son", "syn");
-    dic.addWord("sus", "?؟ ");
-    dic.addWord("sos", "pomocy");
-    dic.addWord("arm", "ręka");
-    cout << "Alphabetically" << endl;
-    dic.print(true);
-    dic.translate("sun");
-    dic.rmvWord("dick");
-    dic.print();
+        cout << "\n\n*-*-*-*-{-----<*****[-----|-\\_/-|-----]*****>-----}-*-*-*-*\n\n" << endl;
+    }
 
     return 0;
 }
