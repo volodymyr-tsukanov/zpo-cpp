@@ -2,11 +2,21 @@
 #include <algorithm>
 #include <cctype>
 #include <vector>
+#include <set>
+#include <map>
 #include <regex>
+#include <fstream>
 #include <boost/algorithm/string.hpp>
+#include "Error.h"
 
 using namespace std;
 using namespace boost::algorithm;
+
+
+void clearCin(){
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
 
 
 void print(char x){
@@ -21,6 +31,27 @@ void testRegex(vector<string>& testSet, regex& rgx){
     for (auto it = testSet.begin(); it != testSet.end(); ++it) {
         cout << "'"<<*it<<"': "<<regex_match(*it, rgx) << endl;
     }
+}
+
+bool isValidName(const string& name) {
+    regex nameRegex("^[A-Za-z]+$");
+    return regex_match(name, nameRegex);
+}
+bool isValidSurname(const string& surname) {
+    regex surnameRegex("^[A-Za-z]+(-[A-Za-z]+)*$");
+    return regex_match(surname, surnameRegex);
+}
+bool isValidAge(const string& age) {
+    regex ageRegex("^(0|[1-9][0-9]?)$");
+    return regex_match(age, ageRegex);
+}
+bool isValidPhoneNumber(const string& phone) {
+    regex phoneRegex("^[1-9][0-9]{8}$");
+    return regex_match(phone, phoneRegex);
+}
+bool isValidEmail(const string& email) {
+    regex emailRegex("^[a-zA-Z][a-zA-Z0-9_.-]*@[a-zA-Z0-9]+\\.[a-zA-Z]{2,}$");
+    return regex_match(email, emailRegex);
 }
 
 
@@ -265,10 +296,126 @@ int main()
         break;
         case 4:
         {
+            int progress = 0;
+            string name, surname, age, phoneNumber, email;
+
+            while(progress != 100){
+                try{
+                    switch(progress){
+                        case 0:
+                        cout << "Podaj imię: ";
+                        cin >> name;
+                        if (!isValidName(name))
+                            throw ProgressError(progress, "Niepoprawne imię!");
+                        progress = 1;
+
+                        case 1:
+                        cout << "Podaj nazwisko: ";
+                        cin >> surname;
+                        if (!isValidSurname(surname))
+                            throw ProgressError(progress, "Niepoprawne nazwisko!");
+                        progress = 2;
+
+                        case 2:
+                        cout << "Podaj wiek (0-99): ";
+                        cin >> age;
+                        if (!isValidAge(age))
+                            throw ProgressError(progress, "Niepoprawny wiek!");
+                        progress = 3;
+
+                        case 3:
+                        cout << "Podaj numer telefonu (9 cyfr): ";
+                        cin >> phoneNumber;
+                        if (!isValidPhoneNumber(phoneNumber))
+                            throw ProgressError(progress, "Niepoprawny numer telefonu!");
+                        progress = 4;
+
+                        case 4:
+                        cout << "Podaj adres e-mail: ";
+                        cin >> email;
+                        if (!isValidEmail(email))
+                            throw ProgressError(progress, "Niepoprawny adres e-mail!");
+                        progress = 99;
+
+                        case 99:
+                        ofstream outFile ("dane.txt", ios_base::app); // Otwórz plik w trybie dopisywania
+                        if (outFile.is_open()) {
+                            outFile << name<<";"<<surname<<";"<<age<<";"<<phoneNumber<<";"<<email << endl;
+                            outFile.close();
+                            cout << "Dane zostały zapisane pomyślnie." << endl;
+                        } else {
+                            throw FileError("dane.txt");
+                        }
+                        progress = 100;
+                        break;
+                    }
+                } catch(ProgressError& e){
+                    e.error();
+                    clearCin();
+                } catch(FileError& e){
+                    e.error();
+                }
+            }
         }
         break;
         case 5:
         {
+            ifstream inFile("dane.txt");
+            if (!inFile.is_open()) {
+                cerr << "Nie można otworzyć pliku " << endl;
+                break;
+            }
+
+            set<string> uniqueDomains;
+            vector<string> evenPhoneNumbers;
+            set<string> hyphenatedSurnames;
+            map<string,int> nameStatistics;
+
+            string line;
+            while (getline(inFile, line)) {
+                stringstream ss(line);
+                string name, surname, age, phoneNumber, email;
+
+                if (getline(ss, name, ';') &&
+                    getline(ss, surname, ';') &&
+                    getline(ss, age, ';') &&
+                    getline(ss, phoneNumber, ';') &&
+                    getline(ss, email)) {
+
+                    size_t atPos = email.find('@');
+                    uniqueDomains.insert(email.substr(atPos + 1));
+
+                    if ((phoneNumber.back() - '0') % 2 == 0)   //przesunięcie ASCII od symbala 0
+                        evenPhoneNumbers.push_back(phoneNumber);
+
+                    if (surname.find('-') != string::npos)
+                        hyphenatedSurnames.insert(surname);
+
+                    nameStatistics[name]++;
+                }
+            }
+            inFile.close();
+
+            // Wyświetlanie wyników
+            cout << "Unikatowe domeny:\n";
+            for (const auto& domain : uniqueDomains) {
+                cout << domain << "\n";
+            }
+
+            cout << "\nNumery telefonów kończące się na liczbę parzystą:\n";
+            for (const auto& phone : evenPhoneNumbers) {
+                cout << phone << "\n";
+            }
+
+            cout << "\nNazwiska łączone:\n";
+            for (const auto& surname : hyphenatedSurnames) {
+                cout << surname << "\n";
+            }
+
+            cout << "\nStatystyka imion:\n";
+            for (const auto& entry : nameStatistics) {
+                cout << entry.first << ": " << entry.second << "\n";
+            }
         }
         break;
         default:
