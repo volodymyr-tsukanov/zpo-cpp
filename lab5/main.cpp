@@ -105,7 +105,7 @@ int main()
         break;
         case 4:
         {
-            Dictionary dic;
+            Dictionary dic; //😈
             dic.addWord("sun", "słońce");
             dic.addWord("test", "abc");
             dic.addWord("duck", "kaczka");
@@ -116,7 +116,7 @@ int main()
             dic.print(true);
             dic.translate("sun");
             dic.rmvWord("duck");
-            cout << "\n\nAltered" << endl;
+            cout << "\nAltered" << endl;
             dic.print();
         }
         break;
