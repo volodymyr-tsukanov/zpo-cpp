@@ -42,10 +42,8 @@ pair<set<int>::iterator, bool> findDuplicate(vector<int>& v, int& sum){
 template<typename T>
 void showSetIntersection(set<T>& st1, set<T>& st2){
     set<T> result;
-    set_difference(st1.begin(),st1.end(), st2.begin(),st2.end(),
-            insert_iterator(result, result.begin()));
-    set_difference(st2.begin(),st2.end(), st1.begin(),st1.end(),
-            insert_iterator(result, result.end()));
+    set_difference(st1.begin(),st1.end(), st2.begin(),st2.end(), inserter(result, result.begin()));
+    set_difference(st2.begin(),st2.end(), st1.begin(),st1.end(), inserter(result, result.end()));
     show(result);
 }
 
@@ -109,16 +107,16 @@ int main()
         {
             Dictionary dic;
             dic.addWord("sun", "słońce");
+            dic.addWord("test", "abc");
             dic.addWord("duck", "kaczka");
-            dic.addWord("dick", "imię się nie tłumaczy 😈");
             dic.addWord("son", "syn");
-            dic.addWord("sus", "?؟ ");
             dic.addWord("sos", "pomocy");
-            dic.addWord("arm", "ręka");
+            dic.addWord("crocodile", "zaba");
             cout << "Alphabetically" << endl;
             dic.print(true);
             dic.translate("sun");
-            dic.rmvWord("dick");
+            dic.rmvWord("duck");
+            cout << "\n\nAltered" << endl;
             dic.print();
         }
         break;

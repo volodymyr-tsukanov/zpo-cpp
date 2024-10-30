@@ -16,3 +16,20 @@
 1728385401 source:/home/vladimr/Desktop/git/zpo-cpp/lab5/src/Dictionary.cpp
 	"Dictionary.h"
 
+1730289439 source:c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab5\src\dictionary.cpp
+	"Dictionary.h"
+
+1730289018 c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab5\include\dictionary.h
+	<iostream>
+	<algorithm>
+	<map>
+	<vector>
+
+1730289624 source:c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab5\main.cpp
+	<iostream>
+	<algorithm>
+	<vector>
+	<set>
+	<map>
+	"Dictionary.h"
+

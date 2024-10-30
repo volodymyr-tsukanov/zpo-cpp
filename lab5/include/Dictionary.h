@@ -23,7 +23,7 @@ public:
     void rmvWord(string word);
 
     void print();
-    void print(bool alphabetically);
+    void print(bool translation_alphabetically);
 };
 
 #endif // DICTIONARY_H
