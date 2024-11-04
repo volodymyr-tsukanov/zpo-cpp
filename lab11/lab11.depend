@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1730738174 source:/home/vladimr/Desktop/git/zpo-cpp/lab11/src/Buffer.cpp
+	"Buffer.h"
+
+1730742962 /home/vladimr/Desktop/git/zpo-cpp/lab11/include/Buffer.h
+	<iostream>
+	<memory>
+	<vector>
+	<fstream>
+
+1730742041 source:/home/vladimr/Desktop/git/zpo-cpp/lab11/main.cpp
+	<iostream>
+	<vector>
+	"Buffer.h"
+
