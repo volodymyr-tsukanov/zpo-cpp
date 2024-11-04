@@ -23,6 +23,10 @@ int main()
         {
         }
         break;
+        case 4:
+        {
+        }
+        break;
         default:
         break;
         }
@@ -32,3 +36,4 @@ int main()
 
     return 0;
 }
+
