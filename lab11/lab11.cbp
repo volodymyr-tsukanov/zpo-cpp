@@ -35,6 +35,8 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Buffer.h" />
+		<Unit filename="include/List.h" />
+		<Unit filename="include/Warehouse.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
