@@ -39,10 +39,10 @@
 1728894962 source:/home/vladimr/Desktop/git/zpo-cpp/lab6/src/Contacts.cpp
 	"Contacts.h"
 
-1729077058 source:c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab6\src\contacts.cpp
+1730891860 source:c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab6\src\contacts.cpp
 	"Contacts.h"
 
-1729077058 c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab6\include\contacts.h
+1730891860 c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab6\include\contacts.h
 	<boost/multi_index_container.hpp>
 	<boost/multi_index/hashed_index.hpp>
 	<boost/multi_index/ordered_index.hpp>
@@ -51,6 +51,6 @@
 	<set>
 	"Contact.h"
 
-1729077058 c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab6\include\contact.h
+1730891860 c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab6\include\contact.h
 	<iostream>
 
