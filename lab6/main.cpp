@@ -103,7 +103,7 @@ void positioveT(const double& t){
 }
 template <typename T>
 void zad63(vector<T>& v){
-    int n = v.size(), idx = 0;
+    int n = v.size(), nm = n/2;
     double avg = 0.0, mean = 0.0;
     vector<double> vw;
 
@@ -111,7 +111,11 @@ void zad63(vector<T>& v){
     avg /= n;
 
     sort(vw.begin(), vw.end(), greater_equal<double>());   //niemalejaco
-    mean = vw[n/2];
+    if(n%2 == 0){   //even
+        mean = (vw[nm-1]+vw[nm]) / 2;
+    } else {
+        mean = vw[nm];
+    }
 
     cout << "avg: "<<avg<<" | mean: "<<mean << endl;
     cout << "less avg: ";
@@ -292,17 +296,24 @@ int main()
         case 2:
         {
             Contacts cnts;
-            cnts.addContact({10,"nm","sn", "birch", "38478512"});
-            cnts.addContact({19,"nm5","sn", "birch", "47478512"});
-            cnts.addContact({17,"n4","sn8", "oak", "58478512"});
-            cnts.addContact({29,"nm3","sn9", "pine", "45478512"});
+            cnts.addContact({10, "Alice", "Smith", "birch", "38478512"});
+            cnts.addContact({19, "Bob", "Smith", "birch", "47478512"});
+            cnts.addContact({17, "Charlie", "Williams", "oak", "58478512"});
+            cnts.addContact({29, "David", "Jones", "pine", "45478512"});
+            cnts.addContact({5, "Eve", "Brown", "maple", "29478512"});
+            cnts.addContact({23, "Frank", "Davis", "cedar", "37478512"});
+            cnts.addContact({31, "Grace", "Miller", "birch", "19478512"});
+            cnts.addContact({8, "Hannah", "Wilson", "willow", "81478512"});
+            cnts.addContact({15, "Ivy", "Moore", "redwood", "99478512"});
+            cnts.addContact({11, "Jack", "Taylor", "birch", "23478512"});
+            cnts.addContact({12, "Kathy", "Anderson", "sequoia", "62478512"});
             cnts.show(); cout << "\n\n";
-            cout << "FbPh 47*: "<<cnts.findByPhone("47478512")->name << endl<<endl;
-            cout << "FbSt birch: "<<cnts.findAllByStreet("birch") << endl<<endl;
-            cout << "FbAgRange [19-30): "<<cnts.findAllByAgeRange(19,30) << endl<<endl;
-            cout << "CAgedFull: "<<cnts.countAllAgedFull() << endl<<endl;
-            cout << "UqSurnamed: "<<cnts.countUniqueSurnamed() << endl<<endl;
-            cout << "ChSt birch: "<<cnts.changeStreet("birch", "barszcz") <<endl<<endl;
+            cout << "FindBy Ph 47*: "<<cnts.findByPhone("47478512")->name << endl<<endl;
+            cout << "FindBy St birch: "<<cnts.findAllByStreet("birch") << endl<<endl;
+            cout << "FindBy AgeRange [19-30): "<<cnts.findAllByAgeRange(19,30) << endl<<endl;
+            cout << "Contacts AgedFull: "<<cnts.countAllAgedFull() << endl<<endl;
+            cout << "UniqueSurnamed: "<<cnts.countUniqueSurnamed() << endl<<endl;
+            cout << "ChangeStreet birch=>barszcz: "<<cnts.changeStreet("birch", "barszcz") <<endl<<endl;
             cnts.rmvContact("58478512");
             cnts.show();
         }
@@ -310,20 +321,20 @@ int main()
         case 3:
         {
             cout << "(int)" << endl;
-            vector<int> vi = {7,1,2,6,3,4,5,-87};
+            vector<int> vi = {7,1,2,3};
             zad63<int>(vi);
+
             cout << "\n\n(float)";
             vector<float> vf = {7.0,1.0,2.0,6.0,3.0,4.0,5.0,-86.9999};
             zad63<float>(vf);
+
             cout << "\n\n(bool)";
             vector<bool> vb = {true,false,false,true,true};
             zad63<bool>(vb);
+
             cout << "\n\n(char)";
             vector<char> vc = {'c','p','p','+'};
             zad63<char>(vc);
-            /*cout << "\n\n(string)";
-            vector<string> vs = {"true","false","was","ist","das"};
-            zad63<string>(vs);*/
         }
         case 4:
         {
