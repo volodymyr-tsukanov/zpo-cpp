@@ -2,7 +2,9 @@
 #include <QCoreApplication>
 #include <iostream>
 #include <QVector>
+#include <QSet>
 #include <QtAlgorithms>
+#include <QDebug>
 #include <QString>
 #include "ccars.h"
 
@@ -29,6 +31,23 @@ void show(QVector<T> vec) {
         cout << *p << " ";
     }
     cout << endl;
+}
+
+bool isPangram(const QString& text) {
+    // Tworzymy zbiór, który będzie przechowywał unikalne litery alfabetu
+    QSet<QChar> letters;
+
+    // Przechodzimy przez każdy znak w napisie
+    for (QChar c : text) {
+        // Ignorujemy znaki, które nie są literami alfabetu
+        if (c.isLetter()) {
+            // Dodajemy literę do zbioru, konwertując na małą literę
+            letters.insert(c.toLower());
+        }
+    }
+
+    // Sprawdzamy, czy w zbiorze znajdują się wszystkie litery alfabetu
+    return letters.size() == 26;
 }
 
 
@@ -140,7 +159,34 @@ int main(int argc, char *argv[]) {
             qSort(vec.begin(), vec.end(), Compare());
             show(vec);*/
 
+    cout << "\n\n";
+
     /*zad7.1 ccars.h*/
+        CCars cars;
+        cars.addCar(Car("Volvo", "V8", 2003, "ER341289"));
+        cars.addCar(Car("Toyota", "V6", 2010, "TY984567"));
+        cars.addCar(Car("Honda", "I4", 2015, "HN123456"));
+        cars.addCar(Car("Ford", "V6", 2018, "FD567890"));
+        cars.addCar(Car("Chevrolet", "V8", 2020, "CH345678"));
+        cars.addCar(Car("BMW", "I6", 2012, "BM234567"));
+        cars.addCar(Car("Audi", "I4", 2016, "AU456789"));
+        cars.addCar(Car("Mercedes-Benz", "V8", 2019, "MB987654"));
+        cars.addCar(Car("Nissan", "V6", 2008, "NS123890"));
+        cars.addCar(Car("Hyundai", "I4", 2021, "HY765432"));
+        cars.displayCars();
+        qDebug() << "\nSorted by y";
+        cars.sortCarsYear(); cars.displayCars();
+        cars.removeCarByVin("NS123890");
+        qDebug() << "\nSorted by m";
+        cars.sortCarsMake(); cars.displayCars();
+
+    qDebug() << "\n\n\n";
+
+    /*zad7.2 Panagram*/
+        QString test1 = "The quick brown fox jumps over the lazy dog";
+        QString test2 = "Hello World";
+        qDebug() << "Test 1: " << (isPangram(test1) ? "Pangram" : "Nie pangram");
+        qDebug() << "Test 2: " << (isPangram(test2) ? "Pangram" : "Nie pangram");
 
     return a.exec();
 }
@@ -161,12 +207,14 @@ o numer VIN.
 o malejąco względem roku produkcji
 o alfabetycznym od a do z względem marki samochodu
 Do przechowywania samochodów należy wykorzystać kontener z biblioteki Qt.
+
 Zadanie 7.2. Pangram
 Napisz funkcję, która jako argument dostaje napis. Zadaniem funkcji jest sprawdzenie czy
 napis jest pangramem. Pangram to napis, w którym występują wszystkie litery alfabetu
 (wielkość liter nie ma znaczenia). W zadaniu bierzemy pod uwagę tylko alfabet łaciński.
 Przykład pangramu to: The quick brown fox jumps over the lazy dog. W zadaniu należy
 wykorzystać kontener QSet. W funkcji main należy przetestować stworzoną funkcję.
+
 Zadanie 7.3. Kraje
 Napisz aplikację okienkową, która będzie obsługiwała informację o kraju oraz liczbie
 ludności. Aplikacja ma umożliwiać:

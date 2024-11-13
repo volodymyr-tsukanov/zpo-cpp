@@ -1,52 +1,42 @@
 #ifndef CCARS_H
 #define CCARS_H
-#include <iostream>
 #include <QVector>
+#include <QDebug>
 
 
 class Car {
 private:
-    std::string make;       // Marka samochodu
-    std::string model;      // Model samochodu
-    int year;           // Rok produkcji
-    std::string vin;        // Numer VIN
+    std::string make;
+    std::string model;
+    int year;
+    std::string vin;
 
 public:
     // Constructor
     Car(const std::string& make, const std::string& model, int year, const std::string& vin)
         : make(make), model(model), year(year), vin(vin) {}
 
-
     // Getters
-    std::string getMake() const {
-        return make;
-    }
-    std::string getModel() const {
-        return model;
-    }
-    int getYear() const {
-        return year;
-    }
-    std::string getVin() const {
-        return vin;
-    }
+    std::string getMake() const { return make; }
+    std::string getModel() const { return model; }
+    int getYear() const { return year; }
+    std::string getVin() const { return vin; }
 
     // Setters
-    void setMake(const std::string& make) {
-        this->make = make;
-    }
-    void setModel(const std::string& model) {
-        this->model = model;
-    }
-    void setYear(int year) {
-        this->year = year;
-    }
-    void setVin(const std::string& vin) {
-        this->vin = vin;
+    void setMake(const std::string& make) { this->make = make; }
+    void setModel(const std::string& model) { this->model = model; }
+    void setYear(int year) { this->year = year; }
+    void setVin(const std::string& vin) { this->vin = vin; }
+
+    // Overload the '<<' operator for easy output with qDebug()
+    friend QDebug operator<<(QDebug dbg, const Car& car) {
+        dbg.nospace() << "Maker: " << QString::fromStdString(car.getMake())
+                      << ", Model: " << QString::fromStdString(car.getModel())
+                      << ", Year: " << car.getYear()
+                      << ", VIN: " << QString::fromStdString(car.getVin());
+        return dbg;
     }
 };
-
-
 
 class CCars {
 private:
@@ -58,13 +48,14 @@ public:
         cars.append(car);
     }
 
-    // Display cars in the catalog
+    // Display cars in the catalog using qDebug
     void displayCars() const {
+        if (cars.isEmpty()) {
+            qDebug() << "No cars to display.";
+            return;
+        }
         for (const auto& car : cars) {
-            std::cout << "Make:" << car.getMake()
-                     << ", Model:" << car.getModel()
-                     << ", Year:" << car.getYear()
-                     << ", VIN:" << car.getVin();
+            qDebug() << car;  // Uses overloaded operator<< for Car and qDebug
         }
     }
 
@@ -89,10 +80,11 @@ public:
             return a.getYear() > b.getYear(); // Descending order by year
         });
     }
-    // sort by make (ascending)
+
+    // Sort by make (ascending)
     void sortCarsMake() {
         std::sort(cars.begin(), cars.end(), [](const Car& a, const Car& b) {
-            return a.getMake() < b.getMake(); // Descending order by year
+            return a.getMake() < b.getMake(); // Ascending order by make
         });
     }
 };
