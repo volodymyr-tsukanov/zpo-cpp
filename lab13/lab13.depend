@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1732007344 source:/home/vladimr/Desktop/git/zpo-cpp/lab13/src/BankAccount.cpp
+	"BankAccount.h"
+
+1732007317 /home/vladimr/Desktop/git/zpo-cpp/lab13/include/BankAccount.h
+	<string>
+	<stdexcept>
+
