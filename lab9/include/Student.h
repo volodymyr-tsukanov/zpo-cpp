@@ -13,6 +13,7 @@ public:
     double grade;
     string email;
 
+
     Student(const string& fName, const string& lName, char gen, double grd, const string& mail = "") : firstName(fName), lastName(lName), gender(gen), grade(grd), email(mail) {}
     Student(const string& student){
         string s;
@@ -27,6 +28,7 @@ public:
         getline(ss,email,';');
     }
 
+
     void show() const {
         cout << left << setw(20) << firstName
                   << setw(20) << lastName
@@ -35,10 +37,10 @@ public:
                   << setw(30) << email << endl;
     }
 
+
     static bool isValidEmail(const string& email) {
         return email.find('@') != string::npos;
     }
-
     static bool isValidName(const string& name) {
         if (name.empty()) {
             return false;
@@ -54,7 +56,6 @@ public:
 
         return false;
     }
-
     static bool isValidGender(char gender) {
         return gender == 'K' || gender == 'M';
     }

@@ -1,30 +1,30 @@
 Imię;Nazwisko;Płeć;Ocena;Email
-Jan;Kowalski;M;4.5;jankowalski@example.com
-Anna;Nowak;K;5;annanowak@example.com
-Piotr;Zalewski;M;3.8;piotr.zalewski@example.com
-Maria;Wójcik;K;4.2;maria.wojcik@example.com
-Tomasz;Lewandowski;M;4.7;tomasz.lewandowski@example.com
-Katarzyna;Krawczyk;K;5;katarzyna.krawczyk@example.com
 Michał;Jankowski;M;3.5;michal.jankowski@example.com
-Ewa;Szymańska;K;4.8;ewa.szymanska@example.com
-Jakub;Kaczmarek;M;4.1;jakub.kaczmarek@example.com
-Agnieszka;Duda;K;3.9;agnieszka.duda@example.com
-Marcin;Witkowski;M;4.6;marcin.witkowski@example.com
-Natalia;Zawadzka;K;5;natalia.zawadzka@example.com
-Artur;Pawlak;M;3.7;artur.pawlak@example.com
-Olga;Bąk;K;4.3;olga.bak@example.com
-Szymon;Czarnecki;M;4;szymon.czarnecki@example.com
-Justyna;Majewska;K;4.9;jestyna.majewska@example.com
 Damian;Olszewski;M;3.6;damian.olszewski@example.com
-Gabriela;Wróbel;K;5;
-Rafał;Górski ;M;4.2;rafal.gorski@example.com
-Karolina ;Król ;K;4.8;karolina.krol@example.com
-Wojciech ;Walczak ;M;3.9;wojciech.walczak@example.com
-Zofia ;Pietrzak ;K;4.5;zofia.pietrzak@example.com
-Jakub ;Sikora ;M;4.1;jakub.sikora@example.com
-Lena ;Nowicka ;K;5;lena.nowicka@example.com
+Artur;Pawlak;M;3.7;artur.pawlak@example.com
+Piotr;Zalewski;M;3.8;piotr.zalewski@example.com
 Patryk ;Włodarczyk ;M;3.8;patryk.wlodarczyk@example.com
-Dominika ;Zielińska ;K;4.7;dominika.zielinska@example.com
+Wojciech ;Walczak ;M;3.9;wojciech.walczak@example.com
+Agnieszka;Duda;K;3.9;agnieszka.duda@example.com
+Szymon;Czarnecki;M;4;szymon.czarnecki@example.com
+Test2;Test3;M;4;a.a@hajdkja
+Jakub ;Sikora ;M;4.1;jakub.sikora@example.com
+Jakub;Kaczmarek;M;4.1;jakub.kaczmarek@example.com
+Maria;Wójcik;K;4.2;maria.wojcik@example.com
+Rafał;Górski ;M;4.2;rafal.gorski@example.com
 Mateusz ;Błaszczyk ;M;4.3;mateusz.blaszczyk@example.com
+Olga;Bąk;K;4.3;olga.bak@example.com
+Jan;Kowalski;M;4.5;jankowalski@example.com
+Zofia ;Pietrzak ;K;4.5;zofia.pietrzak@example.com
+Marcin;Witkowski;M;4.6;marcin.witkowski@example.com
+Dominika ;Zielińska ;K;4.7;dominika.zielinska@example.com
+Tomasz;Lewandowski;M;4.7;tomasz.lewandowski@example.com
+Karolina ;Król ;K;4.8;karolina.krol@example.com
+Ewa;Szymańska;K;4.8;ewa.szymanska@example.com
+Justyna;Majewska;K;4.9;jestyna.majewska@example.com
+Gabriela;Wróbel;K;5;
+Katarzyna;Krawczyk;K;5;katarzyna.krawczyk@example.com
+Lena ;Nowicka ;K;5;lena.nowicka@example.com
+Natalia;Zawadzka;K;5;natalia.zawadzka@example.com
 Vovan;Vovich;M;5;
-Tester;Z;K;2;tst@s
+Anna;Nowak;K;5;annanowak@example.com

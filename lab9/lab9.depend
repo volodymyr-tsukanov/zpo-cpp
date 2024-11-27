@@ -15,3 +15,19 @@
 1729513156 /home/vladimr/Desktop/git/zpo-cpp/lab9/include/Student.h
 	<iostream>
 
+1732706247 source:c:\xampp\htdocs\tmp\zpo-cpp\lab9\main.cpp
+	<iostream>
+	<iomanip>
+	<fstream>
+	<limits>
+	<vector>
+	<algorithm>
+	"Error.h"
+	"Student.h"
+
+1732706247 c:\xampp\htdocs\tmp\zpo-cpp\lab9\include\error.h
+	<iostream>
+
+1732707643 c:\xampp\htdocs\tmp\zpo-cpp\lab9\include\student.h
+	<iostream>
+
