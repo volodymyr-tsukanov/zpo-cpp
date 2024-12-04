@@ -249,7 +249,9 @@ int main()
         break;
         case 2:
         {
-            regex timeRegex("^(?:([01]\\d|2[0-3]):([0-5]\\d)(?::([0-5]\\d))?)?$");
+            regex timeRegex("^(?:([01]\\d|2[0-3])):(?:([0-5]\\d))(?::(?:([0-5]\\d)))?$");
+                          //"^(?P<hor>[01]\\d|2[0-3]):(?P<min>[0-5]\\d)(?::(?P<sec>[0-5]\\d))?$"
+                          //"^(?:([01]\\d|2[0-3]):([0-5]\\d)(?::([0-5]\\d))?)?$"
 
             vector<string> times {
                 "12:30",
@@ -257,6 +259,7 @@ int main()
                 "00:00",
                 "15:45:30",
                 "09:05:05",
+                "9:5:5",      // Invalid
                 "24:00",      // Invalid
                 "12:60",      // Invalid
                 "12:30:60",   // Invalid
@@ -273,13 +276,13 @@ int main()
         {
             regex streetRegex("^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ ]+$");
             regex postalCodeRegex("^\\d{2}-\\d{3}$");
-            regex houseNumberRegex("^\\d+[A-Za-z]?$");
-            regex apartmentNumberRegex("^\\d+[A-Za-z]?$");
+            regex houseNumberRegex("^\\d+[A-Z]?$");
+            regex apartmentNumberRegex("^[1-9]\\d*[a-z]?$");    //was ^\\d+[a-z]?$
 
             vector<string> streets {"Aleja Jana Pawła II", "ulica 123", "Krakowska", "Wrocław"};
             vector<string> postalCodes {"12-345", "67-890", "12345", "12-3A"};
-            vector<string> houseNumbers {"28", "28B", "100", "100C", "Abc"};
-            vector<string> apartmentNumbers {"1", "2A", "3B", "4", "2abc", "bbc"};
+            vector<string> houseNumbers {"28", "28B", "100a", "100C", "Abc"};
+            vector<string> apartmentNumbers {"0", "1", "2a", "3B", "4", "2abc", "bbc"};
 
             cout << "Testing streets:\n";
             testRegex(streets, streetRegex);
@@ -399,22 +402,22 @@ int main()
             // Wyświetlanie wyników
             cout << "Unikatowe domeny:\n";
             for (const auto& domain : uniqueDomains) {
-                cout << domain << "\n";
+                cout << "  "<<domain<< "\n";
             }
 
             cout << "\nNumery telefonów kończące się na liczbę parzystą:\n";
             for (const auto& phone : evenPhoneNumbers) {
-                cout << phone << "\n";
+                cout << "  "<<phone<< "\n";
             }
 
             cout << "\nNazwiska łączone:\n";
             for (const auto& surname : hyphenatedSurnames) {
-                cout << surname << "\n";
+                cout << "  "<<surname<< "\n";
             }
 
             cout << "\nStatystyka imion:\n";
             for (const auto& entry : nameStatistics) {
-                cout << entry.first << ": " << entry.second << "\n";
+                cout << "  "<<entry.first<<": "<<entry.second<< "\n";
             }
         }
         break;
