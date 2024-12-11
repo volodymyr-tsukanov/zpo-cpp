@@ -41,21 +41,31 @@ int main()
         break;
         case 2:
         {
+            // W funkcji main stwórz listę unikatowych sklepów. Sklepy mogą korzystać z tych samych magazynów
             auto warehouse1 = make_shared<Warehouse>("Książki", 50);
             auto warehouse2 = make_shared<Warehouse>("Komputery", 20);
+            auto warehouse3 = make_shared<Warehouse>("Piórniki", 66);
+            auto warehouse4 = make_shared<Warehouse>("Długopisy", 11);
             cout << endl;
-            Shop shop1("Sklep Książkowy");
-            Shop shop2("Sklep Elektroniczny");
-            shop1.addWarehouse(warehouse1);
-            shop2.addWarehouse(warehouse2);
+            vector<unique_ptr<Shop>> shops;
+            shops.push_back(make_unique<Shop>("Sklep AGD"));
+            shops.push_back(make_unique<Shop>("Sklep Złotówka"));
+            cout << endl;
+            shops[0]->addWarehouse(warehouse1);
+            shops[0]->addWarehouse(warehouse2);
+            shops[1]->addWarehouse(warehouse1);
+            shops[1]->addWarehouse(warehouse3);
+            shops[1]->addWarehouse(warehouse4);
 
-            shop1.sellProduct("Książki", 5);
-            shop2.sellProduct("Komputery", 2);
+            shops[0]->sellProduct("Książki", 5);
+            shops[0]->sellProduct("Komputery", 5);
+            shops[1]->sellProduct("Książki", 2);
+            shops[1]->sellProduct("Długopisy", 11);
 
-            shop1.displayWarehouses();
-            shop2.displayWarehouses();
+            shops[0]->displayWarehouses();
+            shops[1]->displayWarehouses();
 
-            shop1.sellProduct("Książki", 60); // to powinno wywołać komunikat o braku towaru
+            shops[0]->sellProduct("Książki", 60); // to powinno wywołać komunikat o braku towaru
             cout << endl;
         }
         break;
