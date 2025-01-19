@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"istream": "cpp",
+			"limits": "cpp",
+			"typeinfo": "cpp",
+			"*.tcc": "cpp"
+		}
+	}
+}

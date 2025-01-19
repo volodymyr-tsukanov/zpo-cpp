@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1728894705 source:/home/vladimr/Desktop/git/zpo-cpp/lab6/main.cpp
+	<boost/multi_index_container.hpp>
+	<boost/multi_index/hashed_index.hpp>
+	<boost/multi_index/member.hpp>
+	<boost/multi_index/ordered_index.hpp>
+	<boost/multi_index/random_access_index.hpp>
+	<boost/fusion/container.hpp>
+	<boost/fusion/sequence.hpp>
+	<boost/mpl/int.hpp>
+	<boost/bind.hpp>
+	<iostream>
+	<vector>
+	"Person.h"
+	"Contact.h"
+	"Contacts.h"
+
+1728837611 source:/home/vladimr/Desktop/git/zpo-cpp/lab6/src/Person.cpp
+	"Person.h"
+
+1728837652 /home/vladimr/Desktop/git/zpo-cpp/lab6/include/Person.h
+	<iostream>
+
+1728846246 source:/home/vladimr/Desktop/git/zpo-cpp/lab6/src/Contact.cpp
+	"Contact.h"
+
+1728894096 /home/vladimr/Desktop/git/zpo-cpp/lab6/include/Contact.h
+	<iostream>
+
+1728894598 /home/vladimr/Desktop/git/zpo-cpp/lab6/include/Contacts.h
+	<boost/multi_index_container.hpp>
+	<boost/multi_index/hashed_index.hpp>
+	<boost/multi_index/ordered_index.hpp>
+	<boost/multi_index/member.hpp>
+	<boost/bind.hpp>
+	<set>
+	"Contact.h"
+
+1728894962 source:/home/vladimr/Desktop/git/zpo-cpp/lab6/src/Contacts.cpp
+	"Contacts.h"
+
+1730891860 source:c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab6\src\contacts.cpp
+	"Contacts.h"
+
+1730891860 c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab6\include\contacts.h
+	<boost/multi_index_container.hpp>
+	<boost/multi_index/hashed_index.hpp>
+	<boost/multi_index/ordered_index.hpp>
+	<boost/multi_index/member.hpp>
+	<boost/bind.hpp>
+	<set>
+	"Contact.h"
+
+1730891860 c:\users\student.desktop-n01b4au\downloads\lab\zpo-cpp\lab6\include\contact.h
+	<iostream>
+

@@ -1,0 +1,115 @@
+# depslib dependency file v1.0
+1728375269 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+	<random>
+	"Even.h"
+	"Student.h"
+	"Compare.h"
+	"City.h"
+	"NumSum.h"
+
+1728218137 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/Even.cpp
+	"Even.h"
+
+1728218100 /home/vladimr/Desktop/git/zpo-cpp/lab4/include/Even.h
+
+1728328194 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/Compare.cpp
+	"Compare.h"
+
+1728327890 /home/vladimr/Desktop/git/zpo-cpp/lab4/include/Compare.h
+	"Student.h"
+	"City.h"
+
+1728218764 /home/vladimr/Desktop/git/zpo-cpp/lab4/include/Student.h
+	<iostream>
+
+1728218765 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/Student.cpp
+	"Student.h"
+
+1728324677 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/Citizen.cpp
+	"Citizen.h"
+
+1728223217 /home/vladimr/Desktop/git/zpo-cpp/lab4/include/Citizen.h
+	<iostream>
+
+1728324700 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/City.cpp
+	"City.h"
+
+1728326606 /home/vladimr/Desktop/git/zpo-cpp/lab4/include/City.h
+	<vector>
+	<algorithm>
+	"Citizen.h"
+	"Map.h"
+
+1728327372 /home/vladimr/Desktop/git/zpo-cpp/lab4/include/Map.h
+	<iostream>
+	<vector>
+	<list>
+
+1728327372 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/Map.cpp
+	"Map.h"
+
+1728331275 source:/home/vladimr/Desktop/git/zpo-cpp/lab4/src/NumSum.cpp
+	"NumSum.h"
+
+1728375215 /home/vladimr/Desktop/git/zpo-cpp/lab4/include/NumSum.h
+
+1729678174 source:/home/student/Pobrane/lab/zpo-cpp/lab4/src/Citizen.cpp
+	"Citizen.h"
+
+1729678174 /home/student/Pobrane/lab/zpo-cpp/lab4/include/Citizen.h
+	<iostream>
+
+1729678174 source:/home/student/Pobrane/lab/zpo-cpp/lab4/src/City.cpp
+	"City.h"
+
+1729678174 /home/student/Pobrane/lab/zpo-cpp/lab4/include/City.h
+	<vector>
+	<algorithm>
+	"Citizen.h"
+	"Map.h"
+
+1729678174 /home/student/Pobrane/lab/zpo-cpp/lab4/include/Map.h
+	<iostream>
+	<vector>
+	<list>
+
+1729678174 source:/home/student/Pobrane/lab/zpo-cpp/lab4/src/Compare.cpp
+	"Compare.h"
+
+1729678174 /home/student/Pobrane/lab/zpo-cpp/lab4/include/Compare.h
+	"Student.h"
+	"City.h"
+
+1729678174 /home/student/Pobrane/lab/zpo-cpp/lab4/include/Student.h
+	<iostream>
+
+1729678174 source:/home/student/Pobrane/lab/zpo-cpp/lab4/src/Even.cpp
+	"Even.h"
+
+1729678174 /home/student/Pobrane/lab/zpo-cpp/lab4/include/Even.h
+
+1729678174 source:/home/student/Pobrane/lab/zpo-cpp/lab4/src/Map.cpp
+	"Map.h"
+
+1729679581 source:/home/student/Pobrane/lab/zpo-cpp/lab4/src/NumSum.cpp
+	"NumSum.h"
+
+1729678174 /home/student/Pobrane/lab/zpo-cpp/lab4/include/NumSum.h
+
+1729678174 source:/home/student/Pobrane/lab/zpo-cpp/lab4/src/Student.cpp
+	"Student.h"
+
+1729679633 source:/home/student/Pobrane/lab/zpo-cpp/lab4/main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+	<random>
+	"Even.h"
+	"Student.h"
+	"Compare.h"
+	"City.h"
+	"NumSum.h"
+

@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"array": "cpp",
+			"deque": "cpp",
+			"string": "cpp",
+			"vector": "cpp",
+			"string_view": "cpp",
+			"*.tcc": "cpp",
+			"compare": "cpp",
+			"concepts": "cpp",
+			"functional": "cpp",
+			"random": "cpp"
+		}
+	}
+}
